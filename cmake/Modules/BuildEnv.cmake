@@ -286,7 +286,7 @@ function(init_submodule path)
     find_package(Git QUIET REQUIRED)
     message(STATUS "Submodule Update: ${srcdir}/${path}")
     execute_process(
-        COMMAND "${GIT_EXECUTABLE}" submodule update --init --recursive --single-branch "${path}"
+        COMMAND "${GIT_EXECUTABLE}" submodule update --init --recursive "${path}"
         WORKING_DIRECTORY "${srcdir}"
         COMMAND_ERROR_IS_FATAL ANY
     )
