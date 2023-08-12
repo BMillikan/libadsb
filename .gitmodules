@@ -9,4 +9,4 @@
 	url = https://github.com/libusb/libusb.git
 [submodule "rtl-sdr"]
 	path = rtl-sdr
-	url = https://github.com/librtlsdr/librtlsdr.bit
+	url = https://github.com/librtlsdr/librtlsdr.git
