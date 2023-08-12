@@ -6,7 +6,7 @@
 	url = https://github.com/ankurvdev/dump978
 [submodule "libusb"]
 	path = libusb
-	url = https://github.com/ankurvdev/libusb
+	url = https://github.com/libusb/libusb.git
 [submodule "rtl-sdr"]
 	path = rtl-sdr
-	url = https://github.com/osmocom/rtl-sdr
+	url = https://github.com/librtlsdr/librtlsdr.bit
