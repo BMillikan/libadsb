@@ -1,5 +1,5 @@
-#include "ADSBListener.h"
-#include "CommonMacros.h"
+#include <ADSBListener.h>
+#include <CommonMacros.h>
 
 #include <iostream>
 #include <mutex>
@@ -24,6 +24,7 @@ struct ADSBTrackerImpl : ADSB::IListener
 
     void OnChanged(ADSB::IAirCraft const& a) override
     {
+
         std::cout << a.FlightNumber() << ":" << std::hex << a.Addr() << ":" << std::dec << " Speed:" << a.Speed() << " Alt:" << a.Altitude()
                   << " Heading:" << a.Heading() << " Climb:" << a.Climb() << " Lat:" << a.Lat1E7() << " Lon:" << a.Lon1E7() << std::endl;
     }

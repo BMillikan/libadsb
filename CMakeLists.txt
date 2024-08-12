@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.19)
+#cmake_minimum_required(VERSION 3.19)
 include(${CMAKE_CURRENT_LIST_DIR}/cmake/Modules/BuildEnv.cmake)
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake/Modules)
 
@@ -89,11 +89,16 @@ add_library(adsb STATIC
     ADSBListener.cpp
     )
 
+
 target_link_libraries(adsb PUBLIC dump978 rtlsdr::rtlsdr Threads::Threads)
 target_include_directories(adsb PUBLIC .)
 
 if (libadsb_BUILD_TESTING AND BUILD_TESTING)
     add_executable(testadsb main.cpp)
+    # state that SqrtLibrary need PIC when the default is shared libraries
+    set_target_properties(testadsb PROPERTIES
+                          POSITION_INDEPENDENT_CODE ${BUILD_SHARED_LIBS}
+                          )
     target_link_libraries(testadsb PRIVATE adsb)
 
     if (DEFINED ANDROID)
